@@ -88,7 +88,6 @@ public:
         }
       }
     }
-    return false;
   }
 
 private:
