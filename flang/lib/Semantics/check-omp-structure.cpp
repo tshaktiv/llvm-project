@@ -69,7 +69,7 @@ public:
       for (const Symbol &symbol : evaluate::CollectSymbols(*e)) {
         const Symbol &root{GetAssociationRoot(symbol)};
         if (IsFunction(root)) {
-          std::string attrs{""};
+          std::string attrs;
           if (!IsElementalProcedure(root)) {
             attrs = " non-ELEMENTAL";
           }
