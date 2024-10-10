@@ -69,8 +69,10 @@ public:
       for (const Symbol &symbol : evaluate::CollectSymbols(*e)) {
         const Symbol &root{GetAssociationRoot(symbol)};
         if (IsFunction(root)) {
+          int i;
           std::string attrs;
           if (!IsElementalProcedure(root)) {
+            i = 123;
             attrs = " non-ELEMENTAL";
           }
           if (symbol.attrs().test(Attr::IMPURE)) {
@@ -85,6 +87,7 @@ public:
                 "WORKSHARE construct"_err_en_US,
                 attrs, root.name());
           }
+          llvm::errs() << i << "\n";
         }
       }
     }
